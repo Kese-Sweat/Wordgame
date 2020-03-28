@@ -1,0 +1,22 @@
+#dashes{
+
+    border-bottom: blue;
+    width: 20px;
+    border-style: groove;
+}
+
+#letterList{
+
+display: flex;
+list-style: none;
+justify-content: space-evenly;
+
+
+}
+
+H1{
+
+    color: cornflowerblue;
+    display: flex;
+    justify-content: center;
+}
