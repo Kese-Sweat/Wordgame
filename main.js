@@ -11,7 +11,7 @@ var commonWords = [
     "who","oil","its","now","find","long","down","day","did","get",
     "come","made","may","part"]
 let guesses=[]// Guesses is an empty array that  will receive letter
-let lives = 8 // created a variable for lives
+let lives = 8 // created a variable so i can track lives
 
 let word = commonWords[Math.floor(Math.random() * commonWords.length)];// will generate a random number for commonWords
 
@@ -25,19 +25,44 @@ for(let i = 0; i < word.length; i++) {// i starts at 0 and goes up to the length
  }
 }
 
-
-
+console.log(word)
 myDashes()
 
-$('#letterList').on('click',function(){
+let letter= ['a', 'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
+let myList = letter.map(item =>{
+    return `<button>${item}</button>`
+}).join('')
+
+$('#letterList').html(myList)// will inject mylist to letterList in html
+
+$('button').on('click',function(){
 let letter = $(this).html()
     guesses.push(letter)
+    console.log(guesses)
+    if (word.includes(letter)){// got to return dashes
+       
+        let dashes = '';
+        for(let i = 0; i < word.length; i++)
+         {// i starts at 0 and goes up to the length of word.length which will be a random word
+            let currentLetter = word.charAt(i)
+            if (guesses.includes(currentLetter)) {
+                dashes = dashes + currentLetter
+                
+            } else { 
+                dashes = dashes + ' _'
+            }
 
-    if (word.includes(letter)){//not working. words not pushing up to answer
+            
+            console.log(dashes)
+            
+        
+        }
+        $('#answer').html(dashes)
+       
+       }
     
-    }
-    myDashes()
-
+   //$('#answer').html(letter)
 
 
 if(!word.includes(letter)){// if word does not include letter then deduct 1 life
@@ -45,24 +70,17 @@ if(!word.includes(letter)){// if word does not include letter then deduct 1 life
 
     //if (lives ===0) return lose
     $('#lives').html(lives)
+
 }
 
-$('#answer').html(answer)
+//$('#answer').html(letter)
 
-if (!guesses.includes(letter)){//if guesses does not include letter then push to guesses array
+if (!word.includes(letter)){//if guesses does not include letter then push to guesses array
     guesses.push(letter)
-    guesses()
     
+        
 }
 })
-$('#guesses').html(guesses)
-
-let letter= ['a', 'b','c','d','e','f','g','h','i','j','o','l','m','n','o','p','q','r','s','t','u','z','w','x','y','z']
-
-let myList = letter.map(item =>{
-    return `<button>${item}</button>`
-}).join('')
-$('#letterList').html(myList)// will inject mylist to letterList in html
 
 
 
@@ -71,5 +89,8 @@ $('#letterList').html(myList)// will inject mylist to letterList in html
 
 
 
-//what is math.floor?
+
+
+
+
 
