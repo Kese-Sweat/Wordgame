@@ -15,17 +15,19 @@ let lives = 8 // created a variable for lives
 
 let word = commonWords[Math.floor(Math.random() * commonWords.length)];// will generate a random number for commonWords
 
-
+function myDashes(){
 let dashes = '';
 for(let i = 0; i < word.length; i++) {// i starts at 0 and goes up to the length of word.length which will be a random word
     dashes = dashes + ' _'
     console.log(dashes)
     $('#answer').html(dashes)
+  
+ }
 }
 
-$('#answer').html(dashes)
 
 
+myDashes()
 
 $('#letterList').on('click',function(){
 let letter = $(this).html()
@@ -34,7 +36,7 @@ let letter = $(this).html()
     if (word.includes(letter)){//not working. words not pushing up to answer
     
     }
-    dashes()
+    myDashes()
 
 
 
@@ -45,9 +47,6 @@ if(!word.includes(letter)){// if word does not include letter then deduct 1 life
     $('#lives').html(lives)
 }
 
-if (guesses.includes(letter)){//not working. words not pushing up to answer
-    
-}
 $('#answer').html(answer)
 
 if (!guesses.includes(letter)){//if guesses does not include letter then push to guesses array

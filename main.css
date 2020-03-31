@@ -5,6 +5,11 @@
     border-style: groove;
 }
 
+h1{
+
+    text-shadow: 2px 2px black;
+}
+
 #letterList{
 
 display: flex;
@@ -19,4 +24,14 @@ H1{
     color: cornflowerblue;
     display: flex;
     justify-content: center;
+}
+
+#answer{
+
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: silver;
 }
