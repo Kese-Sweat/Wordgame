@@ -10,6 +10,10 @@ h1{
     text-shadow: 2px 2px black;
 }
 
+body{
+    background-color: lightblue;
+}
+
 #letterList{
 
 display: flex;
@@ -34,4 +38,11 @@ H1{
 
 button{
     background-color: silver;
+}
+
+#lives{
+
+    margin-left: 12%;
+    color: cornflowerblue;
+    text-shadow: 3px 1px white;
 }

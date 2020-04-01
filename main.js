@@ -52,6 +52,7 @@ let letter = $(this).html()
             } else { 
                 dashes = dashes + ' _'
             }
+            
 
             
             console.log(dashes)
@@ -68,7 +69,13 @@ let letter = $(this).html()
 if(!word.includes(letter)){// if word does not include letter then deduct 1 life
     lives--
 
-    //if (lives ===0) return lose
+    
+    if (lives === word){
+        return alert("GOOD JOB, DAWG!")
+    }
+
+    if (lives ===0){
+        return alert (" GAME OVER, HOMIE!")}
     $('#lives').html(lives)
 
 }
